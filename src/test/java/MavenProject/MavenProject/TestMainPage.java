@@ -108,10 +108,10 @@ public class TestMainPage {
         JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("arguments[0].click()", page2);                  
         
-        String actualUrl3="https://www.gittigidiyor.com/arama/?k=bilgisayar&sf=2";
-        String expectedUrl3= driver.getCurrentUrl();
-        
-       
+//        String actualUrl3="https://www.gittigidiyor.com/arama/?k=bilgisayar&sf=2";
+//        String expectedUrl3= driver.getCurrentUrl();
+//        
+//       
       
         WebElement product=driver.findElement(By.id("product_id_673017705"));
         
@@ -126,12 +126,37 @@ public class TestMainPage {
 		driver.navigate().to("https://www.gittigidiyor.com/sepetim");
 		
 		System.out.println("Prices are equal");
+		
+		
+		
+		WebElement itemSelect=driver.findElement(By.xpath("//*[@id=\'cart-item-477807398\']/div[1]/div[4]/div/div[2]/select"));
+		
+		itemSelect.click();
+		
+		WebElement numberSelect=driver.findElement(By.xpath("//*[@id=\"cart-item-477807398\"]/div[1]/div[4]/div/div[2]/select"));
+		
+		numberSelect.click();
+		
+		
+		
+		
+		//*[@id="cart-item-477807398"]/div[1]/div[4]/div/div[2]/select
+		
+//
+//		WebElement productNumber=driver.findElement(By.xpath("//*[@id=\'cart-item-477807191\']/div[4]/a[1]"));
+//		
+//		 JavascriptExecutor jse6 = (JavascriptExecutor)driver;
+//			jse6.executeScript("arguments[0].click()", productNumber); 
         
-		jse1.executeScript("arguments[0].click()", basket);
+		
 		
 		WebElement delete=driver.findElement(By.xpath("//*[@id=\'cart-item-477768483\']/div[1]/div[3]/div/div[2]/div/a[1]"));
 		
-		delete.click();
+		 JavascriptExecutor jse5 = (JavascriptExecutor)driver;
+			jse5.executeScript("arguments[0].click()", delete); 
+			
+			
+			
 		
 		String expectedBasket = "Ürün Toplamı (0 Adet)";
 		
